@@ -3,168 +3,133 @@
 % !Mode:: "TeX:UTF-8"
 
 \documentclass{resume}
-\usepackage{zh_CN-Adobefonts_external} % simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 \usepackage{linespacing_fix} % disable extra space before next section
 \usepackage{cite}
-\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\usepackage{geometry} % 添加 geometry 宏包
+\usepackage{fontsize} % 添加 fontsize 宏包
+\usepackage{setspace} % 添加 setspace 宏包
+
+\changefontsize{10pt} % 11pt 是字体大小
+% 重新定义 \datedsubsection 命令，设置字体大小为 12pt
+\renewcommand{\datedsubsection}[2]{
+  \subsection*{\fontsize{10pt}{14pt}\selectfont \textbf{#1} \hfill #2}
+}
+
+% 设置页面边距
+\geometry{
+  a4paper, % 纸张大小
+  left=0.5cm, % 左边距
+  right=0.5cm, % 右边距
+  top=0.5cm, % 上边距
+  bottom=0.5cm, % 下边距
+}
+\linespread{1.05}
 
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-\name{Jianpeng Hou}
-\centerline{Machine Learning; Software Development}
-\vspace{2ex}
-\contactInfo{houjp1992@gmail.com}{(+86) 152-0000-0000}{ \url{https://github.com/houjp/}}
+\name{吴泽森}
 
+\basicInfo{
+  \email {}wkw4399xs@gmail.com  \textperiodcentered\ 
+  \phone{13642204176} \textperiodcentered\ 
+  \github []{}LinQi0777
+}
  
-\section{\faGraduationCap\ Education}
-\datedsubsection{\textbf{Institute of Computer Technology, Chinese Academy of Sciences}}{Sep. 2014 -- Jul. 2017}
-\textit{Master student} in Computer Software \& Theory, Rank: top 5\%
-\datedsubsection{\textbf{University of Science \& Technology Beijing}}{Sep. 2010 -- Jul. 2014}
-\textit{Bachelor student} in Computer Science \& Technology, Rank: \nth{4}/124
-
-\section{\faUsers\ Project Experience}
-
-\datedsubsection{\textbf{Big Data Analysis Platform (\href{http://159.226.40.104:18080}{http://159.226.40.104:18080})}}{Oct. 2015 -- Mar. 2016}
-\begin{itemize}
-  \item  Developed distributed algorithms(CART/GBDT/GBRT/RF) on Spark.
-  \item Finished data mining components(Feature-Indexing/Feature-Merging/Feature-Normalization/Scoring).
+\section{\faGraduationCap\  教育经历}
+\datedsubsection{\textbf{广东石油化工学院(本科)}  \quad   \quad   \quad \quad \quad GPA:3.78 / 4.0 \quad \quad \quad \quad \textit{数据科学与大数据技术} \quad \quad   }{2021.09 -- 2025.07}
+ \begin{itemize}
+  \item \textit{Apache、Opengoofy 开源社区贡献者，Apache ShardingSphere、type-fest(14k+ star ) Contributor、AWS 生成式 AI 社区成员}。
+  \item \textit{广东省重点实验室主力开发,负责与三桶油、中科炼化等石化企业项目对接，并独立完成了中科炼化石化管家项目的研发。}
+  \item \textit{热爱分享，知识星球粉丝 600+，多次排查并解决过生产问题，如 百万级消息堆积 、内存溢出、GC 毛刺等，具备 SQL 优化经验。}
+  \item  \textit{参与过支付、风控、大模型相关业务的开发工作并具有项目开发经验，Github 开源优惠券防薅羊毛风控组件收获 star 150+。 }
 \end{itemize}
 
-\datedsubsection{\textbf{China Telecom Big Data Application Contest (\nth{1}/1112; Team Leader)}}{Dec. 2015 -- Mar. 2016}
-The goal of this contest is to predict views of users with ten sites succeeding, according to four hundred million user-behavior historical records(25.38G).
-\begin{itemize}
-  \item Proposed and implemented a multi-target regression algorithm on Spark. Optimized F1-score 0.8\%.
-  \item Designed and developed a probability ranking model for user classification. Optimized F1-score  0.6\%.
-\end{itemize}
-
-\datedsubsection{\textbf{SIGHAN-2015 Chinese Spelling Check Task (\nth{1} Place)}}{Mar. 2015 -- May. 2015}
-The goal of this task is to detect and correct spelling errors on Chinese essays.
-\begin{itemize}
-  \item Handled this task with a unified framework which consisted of candidate generating, two stage candidates re-ranking and global decision making.
-  \item Finished candidate generating model and two stage candidates re-ranking model. Optimized F1-score 18\%.
-\end{itemize}
-
-\section{\faSitemap\ Intern Experience}
-
-\datedsubsection{\textbf{DiDi Research Institute}}{Jul. 2016 -- Sep. 2016}
-\begin{itemize}
-  \item Developed taxi dispatching system which used to balance the supply and demand between urban areas.
-  \item Reconstructed the log system of dispatching based on Kafka and MySQL.
-\end{itemize}
-
-\datedsubsection{\textbf{Baidu Online Network Technology(Beijing) Co.,Ltd}}{Dec. 2013 -- May. 2014}
-\begin{itemize}
-  \item Completed the multi-threaded development of LiveWDBBroom, improved the efficiency by two times.
-  \item Completed the development of the Problems-Tracing Platform which was put into service.
-  \item Passed the examination of Code Master(C++), certified as Good Coder.
-\end{itemize}
-
-\section{\faTrophy\ Academic Competitions}
-\datedline{\textit{\nth{1} Place}~~Awarded in China Telecom Big Data Application Contest}{Mar. 2016}
-\datedline{\textit{\nth{1} Place}~~Awarded in SIGHAN-2015 Chinese Spelling Check Task}{Jun. 2015}
-\datedline{\textit{\nth{1} Place}~~Awarded in China College Students Computer Games Competition}{Nov. 2013}
-\datedline{\textit{\nth{1} Prize}~~Awarded in China College Students Computer Application Contest}{Nov. 2013}
-\datedline{\textit{\nth{1} Prize}~~Awarded in "LanQiao Cup" Software Development Contest(Beijing Division)}{Apr. 2012}
-\datedline{\textit{Silver Medal~(\nth{17} / 200)}~~Awarded in ACM-ICPC Asia Beijing Regional Contest}{Nov. 2015}
-
-\section{\faCogs\ Skills}
+\section{\faCogs\ 专业技能}
+% increase linespacing [parsep=0.5ex]
 \begin{itemize}[parsep=0.5ex]
-  \item Skilled in C++, Scala, Shell. Familiar with data structures and algorithms and had good programming style.
-  \item Experienced in development of distributed machine learning algorithms.
-  \item Strong theoretic knowledge on data mining and machine learning.
+  \item \textbf{操作系统}：熟悉操作系统相关理论，如内存管理、进程通信等，熟悉        Select、Poll、Epoll        等模型的原理。
+  \item \textbf{计算机网络}：熟悉计算机网络基础知识，如        TCP、UDP、QUIC、HTTPS        等网络协议、流量控制、拥塞控制、DNS        等。
+  \item \textbf{MySQL}：熟悉        MySQL        使用及原理，如索引、事务、锁、日志等，具有数据库以及        SQL        调优经验。
+    \item \textbf{Redis}：熟悉        Redis        核心数据结构、数据持久化、数据过期、内存淘汰等设计，深入理解        Redis        高可用架构。
+    \item \textbf{JVM}：熟悉        JVM        底层原理，如类加载、垃圾回收算法等，熟悉        JVM        垃圾回收器的使用以及核心参数，实习过程中有过        JVM        线上调优经验，解决过生产应用        CPU        100\%\ 、内存溢出、GC        回收毛刺等线上问题。
+    \item \textbf{多线程并发}：熟悉        JUC        并发工具类的使用和原理，如线程池、锁、阻塞队列以及原子并发类等。
+\item \textbf{Spring 全家桶}：熟练使用        SpringBoot、Spring        Cloud        Alibaba        进行        Web        后端开发，熟悉部分原理，如        IOC、AOP。        
+\item \textbf{Golang}：熟悉        Map、Slice、Channel        等底层实现，熟悉        GMP        模型、内存分配等机制，熟悉        Gin、Gorm、Hertz        等框架使用。
+\item \textbf{消息队列}：熟悉        RocketMQ、Kafka        消息中间件的使用，实际项目中解决过重消费、消息积压问题。
+\item \textbf{分布式}：熟悉分布式、微服务等架构，熟悉分布式锁、分布式 ID 等,了解过        Paxos、Raft、Gossip、一致性哈希等理论。
+\item \textbf{分布式数据库}：熟悉        HBase、MongoDB、ClickHouse        的使用,并了解部分原理，如一致性原理、        LSM        树、WiredTiger        等。
 \end{itemize}
 
-\pagebreak
 
-\name{侯建鹏 }
-\centerline{求职意向: 机器学习 | 软件研发}
-\vspace{1ex}
-\contactInfo{houjp1992@gmail.com}{(+86) 152-0000-0000}{ \url{https://github.com/houjp/} }
+\section{\faUsers\ 实习经历}
+\datedsubsection{\hspace{5em}\textbf{货拉拉} }{2024.10 -- 至今}
+\role{大数据产品与技术部-基础架构组-基础架构开发实习生｜SpringBoot、Hive、Spark、Flink、Dubbo、Kafka}
 
-\vspace{-1ex}
- 
-\section{\faGraduationCap\  教育背景}
-\datedsubsection{\textbf{中国科学院计算技术研究所(保送)}~~ \ 硕士, 计算机软件与理论, 排名: 5\%}{2014 -- 2017}
-\datedsubsection{\textbf{北京科技大学}~~ \ 学士, 计算机科学与技术, 排名: \nth{4}/124}{2010 -- 2014}
-
-\vspace{1ex}
-
-\section{\faUsers\ 项目经历}
-
-\datedsubsection{\textbf{BDA大数据分析系统 (\href{http://159.226.40.104:18080}{http://159.226.40.104:18080})} }{2015.10 -- 2016.03}
 \begin{itemize}
-  \item 作为 BDA Lib 核心开发者,在分布式计算框架 Spark 上实现了 CART/GBDT/GBRT/RF 算法的 分布式版本,同时完成了这些算法单机版本的开发。
-  \item 实现了 BDA Studio 中需要的数据挖掘基本组件 (包括特征索引、特征合并、特征选择、特征值 归一化、模型输出结果评分等功能),并构建真实场景的应用实例。
+  \item 基于布隆过滤器完成了春节拉货节期间\textbf{亿级数量重复请求}的过滤，\textbf{降低了 ES  97\%\ 的数据库压力},利用更便宜的 Redis 集群代替 ES 集群,实现降本增效，降低了约 52 \%\ 的成本,并对 ES 进行配置与参数优化, 移除 SLB 依赖,减少 99 \%\ 的 YoungGC 次数 。
+
+
+  \item 基于 SPI 机制扩展了        RPC        框架        CGLib、ASM        等动态代理和反射调用，并实现了一致性哈希、轮询等增强型负载均衡策略。
+
+  \item {独立排查并解决线上问题：\textbf{JIT逆优化}导致 CPU 100\%\ ,\textbf{元空间频繁 FullGC},\textbf{内存泄漏导致无限        CMS        GC}。}
+  \item 独立完成 Hive 回归测试方案的制定以及测试混合引擎的开发，并使用 Disruptor 替代 BlockingQueue 实现生产—消费模型解耦。
+
 \end{itemize}
 
-\vspace{-1.5ex}
-
-\datedsubsection{\textbf{中国电信大数据竞赛 (\nth{1}/1112; CNY 200,000; 队长)}}{2015.12 -- 2016.03}
-\begin{onehalfspacing}
-根据海量用户行为数据(大于四亿条,25.38G),预测用户接下来一周对十个视频网站的访问量。
+\datedsubsection{\hspace{2em}\textbf{莉莉丝游戏}}{2024.04 -- 2024.10}
+\role{远光 84 游戏开发部-服务器组-服务器开发工程师（实习）｜Golang、C++、Gin、MongoDB、Redis、gRPC、Dify}{}
 \begin{itemize}
-  \item 基于 Spark 分布式计算框架,提出并实现了 MTGBM 多目标回归算法,使得 F1 值提升 0.8\%。
-  \item 提出并实现了用于用户分类的概率排序模型,使得 F1 值提升 0.6\%。
+  \item 主要产出：        \href{https://jcn9lm5pjtx7.feishu.cn/wiki/AeyhwuVfIiQuO7kEysTcLhfUn4d?from=from_copylink}{\textbf{莉莉丝游戏通用 CDN 最佳实践}}、\href{https://jcn9lm5pjtx7.feishu.cn/wiki/ALS2whLI0iGgQskPk30cdr1QnJf}{\textbf{C++编译时间优化}}，大模型监控-评审 SDK 入选飞书先锋        AI        大模型决赛。
+
+  \item 独立完成        CDN        质量探测工具的开发，运用了\textbf{零拷贝}、\textbf{对象池}等思想提高下载速率，使用\textbf{滑动窗口算法}进行下载速率统计，并完成了\textbf{路由追踪}、\textbf{二次回源检测}等功能，最终得出 \textbf{CDN 调度域}的结论，开启调度域后\textbf{平均下载速率提高}        50\%\ ，成本降低 30\%\ 。
+
+  \item 使用        pprof        对        Go        服务进行性能分析，排查并定位        \textbf{gRPC        协程池溢出}、\textbf{融合日志服务内存泄漏}等问题，并独立进行解决。
+  \item 优化        SingleFlight，使其支持设置\textbf{超时、数据版本控制、指数退避以及均匀重试、分布式锁}，作为解决\textbf{缓存击穿}通用组件。
+  \item 基于 Redis Hash 和 Zset 结构封装 Go 版本的 Tairzset 实现多维度排行榜功能，实现降本增效，并结合时间轮解决大Key问题。
+  \item 参与莉莉丝游戏测试平台配置中心的开发，完成项目启动初始化配置加载功能与配置动态变更功能的实现。
 \end{itemize}
-\end{onehalfspacing}
 
-\vspace{-1.5ex}
 
-\datedsubsection{\textbf{SIGHAN-2015 Chinese Spelling Check Task}}{2015.03 -- 2015.05}
-\begin{onehalfspacing}
-该评测任务是对繁体中文进行拼写检查,给出正确的拼写结果。
+
+% Reference Test
+%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
+%An xxx optimized for xxx\cite{verma2015large}
+%\begin{itemize}
+%  \item main contribution
+%\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{\faCode 项目经历}
+
+\datedsubsection{\textbf{DaoBox——基于区块链技术的 NFT 数字藏品交易平台\&\ 可支持日活量 3 W+ \&\ 单日交易量最高 15W}}{}
+\setlength{\parindent}{0pt}
+\textit{\textbf{项目描述}：}{基于 Hyperchain 联盟链研发的 NFT 数字藏品平台，支持藏品的铸造、交易等核心功能，并提供空投、转增等核心玩法。} \\
+\textit{\textbf{技术栈}：SpringBoot、Spring        Cloud        Alibaba、MySQL、Redis、RocketMQ、ElasticSearch、Seata、RocksDB、Serverless
+}{}
+
 \begin{itemize}
-  \item 实现候选生成排序模型：根据同音、近音、形近字,为句中每一个繁体字生成候选, 并打分排序。
-  \item 实现两轮候选重排序模型：采用简单特征进行预排序,在第一次排序的基础上结合复杂特征进行第二次排序,以此提高排序效率。最终取得第一名，F值超出第二名18\%。
-\end{itemize}
-\end{onehalfspacing}
+    \item 独立完成用户\textbf{订单超时}的数据处理，并完成订单数据的\textbf{冷热分离}实现，提高数据库读写性能。
+    \item 排查并解决了信息同步系统中        RocketMQ        的百万级别数据量的\textbf{消息堆积}以及消息\textbf{重消费问题}。
+    \item 重写 ShardingSphere 和 SnakeYaml 源码，解决 Seata 集成和兼容问题；修改 Canal 源码，解决藏品同步过程时间转换异常问题。
+    \item 基于 Redis 预扣减+MQ 异步化+MySQL乐观锁，实现\textbf{TPS 700}的藏品秒杀抢购，并解决库存超卖问题。
+    \item 参与系统网关模块的开发，通过对称与非对称加密算法实现网关数字签名与 URL 动态加密机制。
+    \item 采用 HotKey 热点探测+二级缓存预热，实时识别 Top20 热点藏品并预热至边缘节点，详情页加载速度从 \textbf{1.2s 优化至200ms}。
+    \item 独立完成项目支付模块的开发工作，实现多渠道支付对接，并在开发过程中解决了支付幂等以及 Seata 事务失效问题。
 
-\vspace{-1ex}
-
-\section{\faSitemap\ 实习经历}
-
-\datedsubsection{\textbf{滴滴研究院~智能平台部~/~算法工程师}}{2016.07 -- 2016.09}
-\vspace{-0.5ex}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item 完成专车调度系统开发、测试并上线，实现对城市各区域专车供需不平衡状态的动态调整。
-  \item 基于Kafka及MySQL完成专车调度日志系统重构，解耦子模块间相互依赖，提高系统可用性。
-\end{itemize}
-\end{onehalfspacing}
-
-\vspace{-1.5ex}
-
-\datedsubsection{\textbf{百度~网页搜索部~/~研发工程师}}{2013.12 -- 2014.05}
-\vspace{-0.5ex}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item  完成 livewdbbroom 工具多线程开发,通过测试并上线,效率提升 2 倍以上。
-  \item 完成离线时效性日志体系建设及离线时效性问题追查平台建设,并上线。
-  \item 通过 Code Master(C++) 考试,获得 Good Coder 认证。
-\end{itemize}
-\end{onehalfspacing}
-
-\vspace{-1ex}
-
-\section{\faTrophy\ 学术竞赛}
-\datedline{\textit{冠军 (\nth{1}/1112; CNY 200,000; 队长)}~中国电信大数据算法应用大赛}{2016.03}
-\datedline{\textit{冠军}~SIGHAN-2015 Chinese Spelling Check Task}{2015.06}
-\datedline{\textit{冠军}~全国大学生计算机博弈大赛}{2013.08}
-\datedline{\textit{银牌 (\nth{17}/200)}~ACM-ICPC 国际大学生程序设计竞赛亚洲区域赛北京赛区}{2015.11}
-\datedline{\textit{四强 (\nth{4}/2293)}~阿里巴巴大数据竞赛“新浪微博互动预测大赛”}{2015.12}
-\datedline{\textit{一等奖}~华北五省及港澳台大学生计算机应用大赛}{2013.11}
-\datedline{\textit{一等奖}~全国软件专业人才设计与创业大赛北京赛区}{2012.04}
-
-\vspace{-1ex}
-
-\section{\faCogs\ 个人能力}
-\begin{itemize}[parsep=0.5ex]
-  \item 熟悉 Scala、C++、Shell,熟悉基本数据结构和算法,有良好的编程风格。
-  \item 有丰富的基于 Spark 分布式计算框架的机器学习算法开发经验。
-  \item 熟悉数据挖掘、机器学习领域基本算法。
 \end{itemize}
 
-\pagebreak
 
 \end{document}
